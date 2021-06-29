@@ -1,0 +1,64 @@
+<form id="ex-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <fieldset id="caja">
+      <h2>Crear Usuario!</h2>
+    
+      <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input name="nombre" type="text" matInput formControlName="name" >
+      </mat-form-field>
+      <br>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input name="nombre" type="text" matInput formControlName="lastname">
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Rut</mat-label>
+        <input name="rut" type="text" matInput formControlName="rut">
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Region</mat-label>
+        <mat-select #select (change)="onRegionChange(select.value)" formControlName="region">
+          <mat-option *ngFor="let region of this.regiones">{{region.nombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Comuna</mat-label>
+        <mat-select #select (change)="onRegionChange(select.value)" formControlName="city">
+          <mat-option *ngFor="let comuna of this.comunas">{{comuna.nombre}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field appearance="fill">
+          <mat-label>Direccion</mat-label>
+          <input name="rut" type="text" matInput formControlName="address">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Correo</mat-label>
+          <input name="rut" type="email" matInput formControlName="email">
+        </mat-form-field>
+        <br>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input name="contrasena" type="password"  matInput formControlName="password">
+      </mat-form-field>
+      <br>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Repetir Contraseña</mat-label>
+        <input name="contrasena2" type="password" matInput formControlName="confirmPassword">
+      </mat-form-field>
+      <br>
+    
+       <button mat-flat-button color="accent" type="submit" (click)="onSubmit()">Crear</button> 
+    </fieldset>
+    </form> 
