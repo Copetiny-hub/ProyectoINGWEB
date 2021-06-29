@@ -1,0 +1,38 @@
+<div> 
+    <a [routerLink]="['/crearticket']" routerLinkActive="router-link-active"> <button mat-flat-button color="accent" type="submit" id ="boton">Crear ticket </button></a>
+    <a [routerLink]="['/tabla']" routerLinkActive="router-link-active"> <button mat-flat-button color="accent" type="submit" id ="boton">Ver tickets</button></a>
+ </div>
+ 
+
+ <table class="default"> Solicitudes
+
+  <table mat-table [dataSource]="lista" class="mat-elevation-z8">
+
+    
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> Asunto </th>
+      <td mat-cell *matCellDef="let ticket"> {{ticket.asunto}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Prioridad </th>
+      <td mat-cell *matCellDef="let ticket"> {{ticket.prioridad}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> Categoria </th>
+      <td mat-cell *matCellDef="let ticket"> {{ticket.categoria}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+      <td mat-cell *matCellDef="let ticket"> {{ticket.descripcion}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</table>
+

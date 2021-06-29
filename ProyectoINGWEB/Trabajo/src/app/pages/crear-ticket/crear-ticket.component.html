@@ -1,0 +1,49 @@
+<div> 
+   <a [routerLink]="['/crearticket']" routerLinkActive="router-link-active"> <button mat-flat-button color="accent" type="submit" id ="boton">Crear ticket</button></a>
+   <a [routerLink]="['/tabla']" routerLinkActive="router-link-active"> <button mat-flat-button color="accent" type="submit" id ="boton">Ver ticket</button></a>
+</div>
+ 
+<form [formGroup]="formulario"  (ngSubmit)="EnviarDatos()" id="ex-form" >
+    <fieldset id="caja">
+      <h2>Solicitud de Formulario.</h2>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Asunto</mat-label>
+        <input matInput type="text" formControlName="asunto" >
+      </mat-form-field>
+      <br>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Prioridad</mat-label>
+        <mat-select formControlName="prioridad">
+          <mat-option value="Alta">Alta</mat-option>
+          <mat-option value="Media">Media</mat-option>
+          <mat-option value="Baja">Baja</mat-option>
+          
+        </mat-select>
+      </mat-form-field>
+      <br>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Categoria</mat-label>
+        <mat-select formControlName="categoria">
+          <mat-option value="Solicitud generica">Solicitud generica</mat-option>
+          <mat-option value="Solicitud de cambio">Solicitud de cambio</mat-option>
+          <mat-option value="Incidente">Incidente</mat-option>
+          <mat-option value="Problema">Problema</mat-option>
+          <mat-option value="Solicitud de Hardware">Solicitud de Hardware</mat-option>
+          <mat-option value="Solicitud de software nuevo">Solicitud de software nuevo</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+    
+      <mat-form-field appearance="fill">
+        <mat-label>Descripcion</mat-label>
+        <textarea matInput type="text" formControlName="descripcion"></textarea>
+      </mat-form-field>
+      <br>
+     
+     <button mat-flat-button color="accent" type="submit" id="boton1">Crear Solicitud</button>
+    </fieldset>
+    </form>
+    

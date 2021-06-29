@@ -1,0 +1,69 @@
+
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()" >
+    <h2>Inicio Sesion!</h2>
+    <fieldset id ="caja">
+      <mat-form-field appearance="fill">
+          <mat-label>Rut</mat-label>
+          <input matInput name="rut" type="text" formControlName="rut">
+          <mat-error *ngIf="rutValidator().invalid" class="form-text form-validator">
+            Debes introducir un RUT válido sin puntos y con guión.
+          </mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput name="contrasena" [type]="hide ? 'password' : 'text'" formControlName="clave">
+          <button mat-icon-button matSuffix (click)="hide = !hide">
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error *ngIf="loginForm.get('clave')?.errors?.minlength" class="form-text form-validator">
+
+            La contraseña debe tener 6 caracteres como mínimo.
+          </mat-error>
+        </mat-form-field>
+        <br>
+
+       <button [disabled]="loginForm.invalid" type="submit" mat-raised-button color="accent" id="boton1">iniciar sesion</button>
+        <button [routerLink]="['/registrousuario']" routerLinkActive="active" mat-flat-button color="accent" type="submit" id="boton2" >Crear Usuario</button>
+      </fieldset>
+  </form>
+
+
+<!--
+<a [routerLink]="['/reclamo']" routerLinkActive="router-link-active"> <button mat-flat-button color="accent" type="submit" id="boton1">iniciar sesion</button></a>
+        <a [routerLink]="['/crear-usuario']" routerLinkActive="router-link-active"> <button mat-flat-button color="accent" type="submit" id="boton2" >Crear Usuario</button></a>
+
+
+
+  <div class="login-form">
+  <mat-card>
+    <mat-card-content>
+      <h1>LOGIN</h1>
+
+      <mat-form-field appearance="fill">
+        <mat-label>RUT</mat-label>
+        <input type="text" matInput placeholder="Escriba su rut sin puntos y con guion" required formControlName="rut">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input type="password" matInput [type]="hide ? 'password' : 'text'" required formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">LOGIN</button>
+    </mat-card-content>
+  </mat-card>
+</div>
+-->
+
+<!--Formulario de Registro, el cual solicite la siguiente información:
+  nombres, apellidos, RUT, dirección de residencia, Región,
+  Comuna, Correo electrónico, contraseña y confirmar contraseña.
+  La contraseña debe guardarse encriptada en la base de datos.
+  La región que se seleccione debe mostrar
+  las comunas asociadas, este es un tipo de campo “Select”.
+  Los campos deben ser obligatorios.-->

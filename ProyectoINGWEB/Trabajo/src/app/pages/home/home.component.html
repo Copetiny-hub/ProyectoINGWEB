@@ -1,0 +1,20 @@
+<h1 *ngIf="authSvc.isLogged | async" > Welcome.</h1>
+
+<p>home works!</p>
+
+<div class="container">
+    <div *ngIf="!isAdmin()">
+        <h1 class="display-4">Bienvenido!</h1>
+        <p class="lead">HOLA USUARIIO.</p>
+        <hr class="my-4">
+        <button class="btn btn-info btn-lg mr-1 mb-1" [routerLink]="['crearticket']">Abrir solicitud</button>
+        <button class="btn btn-secondary btn-lg mr-1 mb-1" [routerLink]="['']">Ver Solicitudes</button>
+    </div>
+    <div *ngIf="isAdmin()">
+        <h1 class="display-4">Bienvenido!</h1>
+        <p class="lead">HOLA ADMINISTRADOR</p>
+        <hr class="my-4">
+        <button class="btn btn-info btn-lg mr-1 mb-1" [routerLink]="['']">Solicitudes</button>
+        <button class="btn btn-secondary btn-lg mr-1 mb-1" [routerLink]="['']">Usuarios registrados</button>
+    </div>
+</div>

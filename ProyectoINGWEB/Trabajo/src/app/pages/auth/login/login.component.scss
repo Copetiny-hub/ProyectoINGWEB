@@ -1,0 +1,70 @@
+// .card {
+//   margin-top: 2%;
+// }
+
+// .card-body .btn {
+//   width: 100%;
+// }
+
+// .form-validator {
+//   color: #dc3545;
+// }
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.login-form{
+  padding-top: 30px;
+
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content:right;
+  //align-items: center;
+  text-align: center;
+
+}
+
+.form button {
+  padding: 0.5em 1em;
+  border: none;
+  background: rgb(100, 200, 255);
+  cursor: pointer;
+}
+
+mat-form-field{
+  width: 500px;
+}
+
+
+#caja{
+  background-color: #E5E7E9 ;
+}
+#boton{
+  font-size: 16px;
+  position: relative;
+  top:5px;
+  background-color:  #E5E7E9;
+  border-radius: 0px;
+  color: black;
+
+}
+div{
+width: 100%;
+background-color:   #E5E7E9;
+height: 45px;
+border-bottom:2px solid black;
+padding: 0;
+}
+#boton1{
+position: relative;
+right: 30px;
+}
+#boton2{
+position: relative;
+left: 30px;
+}

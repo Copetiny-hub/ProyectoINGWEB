@@ -1,0 +1,51 @@
+#boton{
+    font-size: 16px;
+    position: relative;
+    top:5px;
+    background-color:  #E5E7E9;
+    border-radius: 0px;
+    color: black;
+    
+}
+div{
+    width: 100%;
+    background-color:   #E5E7E9;
+    height: 45px;
+    border-bottom:2px solid black;
+    padding: 0;
+  }
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #ex-form{
+    padding-top: 30px;
+  
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:right;
+    //align-items: center;
+    text-align: center;
+  
+  }
+
+  #caja{
+    background-color: #E5E7E9 ;
+  }
+  mat-form-field{
+    width: 500px;
+  }
+  table {
+    width: 100%;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  td, th {
+    width: 25%;
+  }
